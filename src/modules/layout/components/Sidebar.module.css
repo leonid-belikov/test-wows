@@ -1,0 +1,16 @@
+.sidebar {
+  background-color: rgb(218 164 84 / 0.2);
+  width: 350px;
+  will-change: transform;
+  transition: transform 0.1s;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}

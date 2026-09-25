@@ -1,6 +1,6 @@
 import cm from './App.module.css'
 import { type FC } from 'react'
-import { Header, useMqStore } from 'modules/layout'
+import { Header, Sidebar, useMqStore } from 'modules/layout'
 import cx from 'clsx'
 
 export const App: FC = () => {
@@ -10,14 +10,7 @@ export const App: FC = () => {
     <>
       <Header />
       <div className={cm.page}>
-        <aside
-          className={cx(cm.sidebar, {
-            [cm.hidden]: isHiddenSidebar,
-          })}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolores esse expedita
-          id incidunt itaque pariatur quas repellendus tempora voluptatibus!
-        </aside>
+        <Sidebar />
         <main
           className={cx(cm.main, {
             [cm.compressed]: !isHiddenSidebar,
