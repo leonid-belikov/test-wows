@@ -1,0 +1,5 @@
+.header {
+  background-color: var(--default-solid-background);
+  height: 64px;
+  width: 100%;
+}

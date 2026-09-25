@@ -1,11 +1,11 @@
-// import cm from './App.module.css'
+import cm from './App.module.css'
 import type { FC } from 'react'
-import { IfMediaQuery } from 'modules/mq'
+import { Header } from 'modules/layout'
 
 export const App: FC = () => {
   return (
     <div>
-      <IfMediaQuery contentIfMobile={<div>Mobile</div>} contentIfDesktop={<div>Desktop</div>} />
+      <Header className={cm.header} />
     </div>
   )
 }
