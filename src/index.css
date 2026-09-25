@@ -1,0 +1,22 @@
+:root {
+  --text-primary: #fff;
+  --main-font-family: RobotoCondensed;
+  --main-font-size: 16px;
+  --default-background: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/default-pattern.jpg);
+}
+
+#root {
+  /*  */
+}
+
+body {
+  background: var(--default-background);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-primary);
+  font-family: var(--main-font-family), sans-serif;
+  font-size: var(--main-font-size);
+  overflow-x: hidden;
+  height: 100%;
+}
