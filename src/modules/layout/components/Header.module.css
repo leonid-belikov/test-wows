@@ -4,3 +4,9 @@
   width: 100%;
   flex-shrink: 0;
 }
+
+.header button {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}

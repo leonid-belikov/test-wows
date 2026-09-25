@@ -1,27 +1,18 @@
 import cm from './App.module.css'
-import { type FC, useState } from 'react'
-import { Header } from 'modules/layout'
+import { type FC } from 'react'
+import { Header, useMqStore } from 'modules/layout'
 import cx from 'clsx'
 
 export const App: FC = () => {
-  const [show, setShow] = useState(true)
+  const isHiddenSidebar = useMqStore((state) => state.isHiddenSidebar)
 
   return (
     <>
-      <Header className={cm.header}>
-        <button
-          type="button"
-          onClick={() => {
-            setShow((prev) => !prev)
-          }}
-        >
-          Show
-        </button>
-      </Header>
+      <Header />
       <div className={cm.page}>
         <aside
           className={cx(cm.sidebar, {
-            [cm.hidden]: !show,
+            [cm.hidden]: isHiddenSidebar,
           })}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolores esse expedita
@@ -29,7 +20,7 @@ export const App: FC = () => {
         </aside>
         <main
           className={cx(cm.main, {
-            [cm.compressed]: show,
+            [cm.compressed]: !isHiddenSidebar,
           })}
         >
           <div className={cm.content}>

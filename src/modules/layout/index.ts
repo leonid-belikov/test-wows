@@ -1,3 +1,4 @@
-import Header from './components/Header.tsx'
+import Header from './components/Header'
+import { useMqStore } from './store/useMqStore'
 
-export { Header }
+export { Header, useMqStore }
