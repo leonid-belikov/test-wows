@@ -1,0 +1,28 @@
+.main {
+  background-color: rgb(97 185 182 / 0.2);
+  height: 100%;
+  transition: margin-left 0.1s;
+  will-change: width;
+  margin-left: 0;
+  display: flex;
+}
+
+.main.compressed {
+  margin-left: 350px;
+}
+
+.content {
+  background-color: rgb(122 97 185 / 0.2);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(200px, 1fr);
+  grid-gap: 10px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.card {
+  background-color: rgb(59 61 68 / 0.38);
+}
