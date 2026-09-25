@@ -2,7 +2,7 @@
   background-color: rgb(97 185 182 / 0.2);
   height: 100%;
   transition: margin-left 0.1s;
-  will-change: width;
+  will-change: margin-left;
   margin-left: 0;
   display: flex;
 }
@@ -14,13 +14,18 @@
 .content {
   background-color: rgb(122 97 185 / 0.2);
   flex-grow: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: minmax(200px, 1fr);
-  grid-gap: 10px;
   overflow: auto;
   padding: 10px;
+}
+
+.row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
 }
 
 .card {
