@@ -24,6 +24,7 @@ const ShipList = () => {
     return result
   }, [columnsCount])
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const virtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollRef.current,
@@ -42,31 +43,37 @@ const ShipList = () => {
       const { width } = entry.contentRect
       if (width <= 0) return
 
-      const currentVirtualItems = virtualizerRef.current.getVirtualItems()
-      const centerRowVirtualIndex = Math.floor(currentVirtualItems.length / 2)
-      const centerRowIndex = currentVirtualItems[centerRowVirtualIndex].index
-      const anchorItemIndex = centerRowIndex * columnsCountRef.current
-
+      const initItems = virtualizerRef.current.getVirtualItems()
       const cols = Math.max(1, Math.floor((width + GAP) / (MIN_ITEM_WIDTH + GAP)))
       const totalGapsWidth = (cols - 1) * GAP
       const columnWidth = (width - totalGapsWidth) / cols
       const computedRowHeight = columnWidth / ASPECT_RATIO
 
+      setRowHeight(computedRowHeight)
+      virtualizerRef.current.measure()
+
+      const isAtTop = initItems[0]?.index === 0
+
       if (cols !== columnsCountRef.current) {
         if (rafId) {
           cancelAnimationFrame(rafId)
         }
+        const prevCols = columnsCountRef.current
         setColumnsCount(cols)
-        const newRowIndex = Math.floor(anchorItemIndex / cols)
-        rafId = requestAnimationFrame(() => {
-          virtualizerRef.current.scrollToIndex(newRowIndex, {
-            align: 'center',
-            behavior: 'smooth',
-          })
-        })
-      }
 
-      setRowHeight(computedRowHeight)
+        if (!isAtTop) {
+          rafId = requestAnimationFrame(() => {
+            const centerRowVirtualIndex = Math.floor(initItems.length / 2)
+            const centerRowIndex = initItems[centerRowVirtualIndex]?.index
+            const anchorItemIndex = centerRowIndex * prevCols
+            const newRowIndex = Math.ceil(anchorItemIndex / cols)
+            virtualizerRef.current.scrollToIndex(newRowIndex, {
+              align: 'center',
+              behavior: 'instant',
+            })
+          })
+        }
+      }
     })
 
     observer.observe(scrollRef.current)
