@@ -1,10 +1,10 @@
 import cm from './Sidebar.module.css'
 import cx from 'clsx'
-import { useMqStore } from '../store/useMqStore.ts'
+import { useLayoutStore } from '../store/useLayoutStore.ts'
 import { useIsDesktop } from 'modules/mq'
 
 const Sidebar = () => {
-  const isHiddenSidebar = useMqStore((state) => state.isHiddenSidebar)
+  const isHiddenSidebar = useLayoutStore((state) => state.isHiddenSidebar)
 
   const isDesktop = useIsDesktop()
 

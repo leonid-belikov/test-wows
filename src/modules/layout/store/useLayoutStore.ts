@@ -6,11 +6,13 @@ interface MqState {
   toggleSidebar: () => void
 }
 
-export const useMqStore = create<MqState>()(
+export const useLayoutStore = create<MqState>()(
   persist(
     (set, get) => ({
       isHiddenSidebar: false,
-      toggleSidebar: () => set({ isHiddenSidebar: !get().isHiddenSidebar }),
+      toggleSidebar: () => {
+        set({ isHiddenSidebar: !get().isHiddenSidebar })
+      },
     }),
     {
       name: 'mqStore',
