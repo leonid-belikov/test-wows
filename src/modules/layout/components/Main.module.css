@@ -10,28 +10,3 @@
 .main.compressed {
   margin-left: 350px;
 }
-
-.content {
-  background-color: rgb(122 97 185 / 0.2);
-  flex-grow: 1;
-  overflow: auto;
-  padding: 10px;
-}
-
-.row {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 10px;
-}
-
-.card {
-  /*background-color: rgb(59 61 68 / 0.38);*/
-  background: url("https://wows-gloss-icons.wgcdn.co/icons/vehicle/large/PHSC998_316f97c460e8bc7dad1862f6f894b972a78e0a3440860dc46d798a9fe7850e81.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: rgb(255 255 255 / 0.23) 1px solid;
-}
