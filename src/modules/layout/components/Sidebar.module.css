@@ -2,7 +2,7 @@
   background-color: rgb(218 164 84 / 0.2);
   width: 350px;
   will-change: transform;
-  transition: transform 0.1s;
+  transition: transform var(--default-transition-time);
   overflow: hidden;
   flex-shrink: 0;
   position: absolute;

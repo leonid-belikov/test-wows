@@ -1,7 +1,7 @@
 .main {
   background-color: rgb(97 185 182 / 0.2);
   height: 100%;
-  transition: margin-left 0.1s;
+  transition: margin-left var(--default-transition-time);
   will-change: margin-left;
   margin-left: 0;
   display: flex;
@@ -29,5 +29,9 @@
 }
 
 .card {
-  background-color: rgb(59 61 68 / 0.38);
+  /*background-color: rgb(59 61 68 / 0.38);*/
+  background: url("https://wows-gloss-icons.wgcdn.co/icons/vehicle/large/PHSC998_316f97c460e8bc7dad1862f6f894b972a78e0a3440860dc46d798a9fe7850e81.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: rgb(255 255 255 / 0.23) 1px solid;
 }

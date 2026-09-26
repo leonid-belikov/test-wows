@@ -33,51 +33,55 @@ const Main = () => {
     getScrollElement: () => scrollRef.current,
     estimateSize: () => rowHeight + GAP,
   })
+  const virtualizerRef = useRef(virtualizer)
+
+  virtualizerRef.current = virtualizer
 
   useLayoutEffect(() => {
     if (!scrollRef.current) return
 
-    let timerId: number | null = null
+    let rafId: number | null = null
 
     const observer = new ResizeObserver(([entry]) => {
-      if (timerId) {
-        clearTimeout(timerId)
-      }
-      timerId = setTimeout(() => {
-        const { width } = entry.contentRect
-        if (width <= 0) return
+      const { width } = entry.contentRect
+      if (width <= 0) return
 
-        const currentVirtualItems = virtualizer.getVirtualItems()
-        const centerRowVirtualIndex = Math.floor(currentVirtualItems.length / 2)
-        const centerRowIndex = currentVirtualItems[centerRowVirtualIndex].index
-        const anchorItemIndex = centerRowIndex * columnsCountRef.current
+      const currentVirtualItems = virtualizerRef.current.getVirtualItems()
+      const centerRowVirtualIndex = Math.floor(currentVirtualItems.length / 2)
+      const centerRowIndex = currentVirtualItems[centerRowVirtualIndex].index
+      const anchorItemIndex = centerRowIndex * columnsCountRef.current
 
-        const cols = Math.max(1, Math.floor((width + GAP) / (MIN_ITEM_WIDTH + GAP)))
-        const totalGapsWidth = (cols - 1) * GAP
-        const columnWidth = (width - totalGapsWidth) / cols
-        const computedRowHeight = columnWidth / ASPECT_RATIO
+      const cols = Math.max(1, Math.floor((width + GAP) / (MIN_ITEM_WIDTH + GAP)))
+      const totalGapsWidth = (cols - 1) * GAP
+      const columnWidth = (width - totalGapsWidth) / cols
+      const computedRowHeight = columnWidth / ASPECT_RATIO
 
-        if (cols !== columnsCountRef.current) {
-          setColumnsCount(cols)
-          const newRowIndex = Math.floor(anchorItemIndex / cols)
-          requestAnimationFrame(() => {
-            virtualizer.scrollToIndex(newRowIndex, { align: 'center' })
-          })
+      if (cols !== columnsCountRef.current) {
+        if (rafId) {
+          cancelAnimationFrame(rafId)
         }
+        setColumnsCount(cols)
+        const newRowIndex = Math.floor(anchorItemIndex / cols)
+        rafId = requestAnimationFrame(() => {
+          virtualizerRef.current.scrollToIndex(newRowIndex, {
+            align: 'center',
+            behavior: 'smooth',
+          })
+        })
+      }
 
-        setRowHeight(computedRowHeight)
-      }, 50)
+      setRowHeight(computedRowHeight)
     })
 
     observer.observe(scrollRef.current)
 
     return () => {
-      if (timerId) {
-        clearTimeout(timerId)
+      if (rafId) {
+        cancelAnimationFrame(rafId)
       }
       observer.disconnect()
     }
-  }, [virtualizer])
+  }, [])
 
   return (
     <main
