@@ -23,7 +23,8 @@
     "noFallthroughCasesInSwitch": true,
 
     "paths": {
-      "modules/*": ["./src/modules/*"]
+      "modules/*": ["./src/modules/*"],
+      "ui-kit": ["./src/ui-kit"]
     }
   },
   "include": ["src"]
