@@ -1,7 +1,7 @@
 import cm from './Header.module.css'
 import cx from 'clsx'
 import type { FC } from 'react'
-import { useLayoutStore } from '../store/useLayoutStore.ts'
+import { useLayoutStore } from '../store/useLayoutStore'
 
 type Props = {
   className?: string

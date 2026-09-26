@@ -1,5 +1,5 @@
 import cm from './Main.module.css'
-import { useLayoutStore } from '../store/useLayoutStore.ts'
+import { useLayoutStore } from '../store/useLayoutStore'
 import cx from 'clsx'
 import type { FC, ReactNode } from 'react'
 import { useIsDesktop } from 'modules/mq'

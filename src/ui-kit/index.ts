@@ -1,3 +1,3 @@
-import VirtualGrid from './components/VirtualGrid.tsx'
+import VirtualGrid from './components/VirtualGrid'
 
 export { VirtualGrid }

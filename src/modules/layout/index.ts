@@ -1,6 +1,5 @@
 import Header from './components/Header'
-import Sidebar from './components/Sidebar.tsx'
-import Main from './components/Main.tsx'
-import { useLayoutStore } from './store/useLayoutStore.ts'
+import Sidebar from './components/Sidebar'
+import Main from './components/Main'
 
-export { Header, Sidebar, Main, useLayoutStore }
+export { Header, Sidebar, Main }

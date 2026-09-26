@@ -1,6 +1,6 @@
 import cm from './Sidebar.module.css'
 import cx from 'clsx'
-import { useLayoutStore } from '../store/useLayoutStore.ts'
+import { useLayoutStore } from '../store/useLayoutStore'
 import { useIsDesktop } from 'modules/mq'
 
 const Sidebar = () => {
