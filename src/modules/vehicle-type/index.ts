@@ -1,1 +1,3 @@
-export * as vehicleTypeAction from './actions/vehicleTypeActions'
+import VehicleTypeLabel from './components/VehicleTypeLabel'
+
+export { VehicleTypeLabel }
