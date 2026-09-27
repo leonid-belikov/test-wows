@@ -1,4 +1,4 @@
-import { type Key, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { type Key, type ReactNode, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import cm from './VirtualGrid.module.css'
 import { useVirtualizer } from '@tanstack/react-virtual'
 
@@ -7,10 +7,11 @@ const GAP = 10
 const ASPECT_RATIO = 16 / 9
 
 type Props<T> = {
-  items: Array<T>
+  keys: Array<T>
+  children: (key: T) => ReactNode
 }
 
-const VirtualGrid = <T extends { id: Key }>({ items }: Props<T>) => {
+const VirtualGrid = <T extends Key>({ keys, children }: Props<T>) => {
   const [columnsCount, setColumnsCount] = useState(1)
   const [rowHeight, setRowHeight] = useState(200)
 
@@ -21,11 +22,11 @@ const VirtualGrid = <T extends { id: Key }>({ items }: Props<T>) => {
 
   const rows = useMemo(() => {
     const result = []
-    for (let i = 0; i < items.length; i += columnsCount) {
-      result.push(items.slice(i, i + columnsCount))
+    for (let i = 0; i < keys.length; i += columnsCount) {
+      result.push(keys.slice(i, i + columnsCount))
     }
     return result
-  }, [columnsCount, items])
+  }, [columnsCount, keys])
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const virtualizer = useVirtualizer({
@@ -96,10 +97,11 @@ const VirtualGrid = <T extends { id: Key }>({ items }: Props<T>) => {
           height: `${virtualizer.getTotalSize()}px`,
           width: '100%',
           position: 'relative',
+          overflow: 'hidden',
         }}
       >
         {virtualizer.getVirtualItems().map((row) => {
-          const items = rows[row.index]
+          const keys = rows[row.index]
           return (
             <div
               key={row.key}
@@ -109,15 +111,14 @@ const VirtualGrid = <T extends { id: Key }>({ items }: Props<T>) => {
                 transform: `translateY(${row.start}px)`,
               }}
             >
-              {items.map((item) => (
+              {keys.map((key) => (
                 <div
-                  key={item.id}
-                  className={cm.card}
+                  key={key}
                   style={{
                     height: `${row.size - 10}px`,
                   }}
                 >
-                  Card {item.id} (row {row.index})
+                  {children(key)}
                 </div>
               ))}
             </div>

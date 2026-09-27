@@ -3,11 +3,14 @@ import { Loader, VirtualGrid } from 'ui-kit'
 import { useShip } from '../hooks/useShip.ts'
 import cx from 'clsx'
 import { shipActions } from 'modules/ship'
-
-const ITEMS = Array.from({ length: 1049 }).map((_, i) => ({ id: i + 1 }))
+import ShipCard from 'ui-kit/components/ShipCard.tsx'
+import { useVehicleType } from 'modules/vehicle-type'
+import { useNation } from 'modules/nation'
 
 const ShipList = () => {
-  const { isPending, isError } = useShip()
+  useVehicleType()
+  useNation()
+  const { data, isPending, isError } = useShip()
 
   if (isPending)
     return (
@@ -24,9 +27,11 @@ const ShipList = () => {
       </div>
     )
 
+  const keys = Object.keys(data)
+
   return (
     <div className={cm.content}>
-      <VirtualGrid items={ITEMS} />
+      <VirtualGrid keys={keys} children={(key) => <ShipCard ship={data[key]} />} />
     </div>
   )
 }

@@ -21,7 +21,7 @@ const NationIcon: FC<Props> = ({ value, isLarge, className }) => {
   const path = isLarge ? nationData.iconPath.large : nationData.iconPath.small
   const src = IconService.getURL(path)
 
-  return <img className={className} src={src} alt={value} />
+  return <img loading="lazy" className={className} src={src} alt={value} />
 }
 
 export default NationIcon

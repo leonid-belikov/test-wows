@@ -5,6 +5,7 @@
   --default-background: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/default-pattern.jpg);
   --default-solid-background: #050505;
   --default-transition-time: 0.2s;
+  --info-background: rgb(13 47 82 /0.8);
 }
 
 * {
