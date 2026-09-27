@@ -21,5 +21,3 @@ export interface Ship {
   nameDictionary: Dictionary
   descriptionDictionary: Dictionary
 }
-
-export type ShipData = Record<string, Ship>

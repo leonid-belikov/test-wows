@@ -27,11 +27,9 @@ const ShipList = () => {
       </div>
     )
 
-  const keys = Object.keys(data)
-
   return (
     <div className={cm.content}>
-      <VirtualGrid keys={keys} children={(key) => <ShipCard ship={data[key]} />} />
+      <VirtualGrid items={data} children={(item) => <ShipCard ship={item} />} />
     </div>
   )
 }

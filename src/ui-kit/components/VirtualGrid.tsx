@@ -7,11 +7,11 @@ const GAP = 10
 const ASPECT_RATIO = 16 / 9
 
 type Props<T> = {
-  keys: Array<T>
-  children: (key: T) => ReactNode
+  items: Array<T>
+  children: (item: T) => ReactNode
 }
 
-const VirtualGrid = <T extends Key>({ keys, children }: Props<T>) => {
+const VirtualGrid = <T extends { id: Key }>({ items, children }: Props<T>) => {
   const [columnsCount, setColumnsCount] = useState(1)
   const [rowHeight, setRowHeight] = useState(200)
 
@@ -22,11 +22,11 @@ const VirtualGrid = <T extends Key>({ keys, children }: Props<T>) => {
 
   const rows = useMemo(() => {
     const result = []
-    for (let i = 0; i < keys.length; i += columnsCount) {
-      result.push(keys.slice(i, i + columnsCount))
+    for (let i = 0; i < items.length; i += columnsCount) {
+      result.push(items.slice(i, i + columnsCount))
     }
     return result
-  }, [columnsCount, keys])
+  }, [columnsCount, items])
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const virtualizer = useVirtualizer({
@@ -101,7 +101,7 @@ const VirtualGrid = <T extends Key>({ keys, children }: Props<T>) => {
         }}
       >
         {virtualizer.getVirtualItems().map((row) => {
-          const keys = rows[row.index]
+          const items = rows[row.index]
           return (
             <div
               key={row.key}
@@ -111,14 +111,14 @@ const VirtualGrid = <T extends Key>({ keys, children }: Props<T>) => {
                 transform: `translateY(${row.start}px)`,
               }}
             >
-              {keys.map((key) => (
+              {items.map((item) => (
                 <div
-                  key={key}
+                  key={item.id}
                   style={{
                     height: `${row.size - 10}px`,
                   }}
                 >
-                  {children(key)}
+                  {children(item)}
                 </div>
               ))}
             </div>
