@@ -1,1 +1,1 @@
-export * from './nationModels'
+export * from './nationModel.ts'

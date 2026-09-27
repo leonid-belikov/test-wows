@@ -1,4 +1,4 @@
-import { Locale } from 'modules/locale/model'
+import { type Dictionary } from 'modules/locale/model'
 import { VehicleTypeName } from '../model'
 
 interface VehicleTypeResponseValue {
@@ -11,7 +11,7 @@ interface VehicleTypeResponseValue {
   }
   sort_order: number
   localization: {
-    mark: Record<Locale, string>
+    mark: Dictionary
   }
 }
 

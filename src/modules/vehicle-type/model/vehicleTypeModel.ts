@@ -1,6 +1,6 @@
-import { Locale } from 'modules/locale/model'
+import { type Dictionary } from 'modules/locale/model'
 
-export const enum VehicleTypeName {
+export enum VehicleTypeName {
   CRUISER = 'Cruiser',
   AIR_CARRIER = 'AirCarrier',
   BATTLESHIP = 'Battleship',
@@ -10,7 +10,7 @@ export const enum VehicleTypeName {
 
 export interface VehicleTypeValue {
   iconPath: string
-  nameDictionary: Record<Locale, string>
+  nameDictionary: Dictionary
 }
 
 export type VehicleTypeData = Record<VehicleTypeName, VehicleTypeValue>

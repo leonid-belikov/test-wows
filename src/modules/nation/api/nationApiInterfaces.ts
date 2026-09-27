@@ -1,5 +1,5 @@
 import { NationName } from 'modules/nation/model'
-import { Locale } from 'modules/locale/model'
+import { type Dictionary } from 'modules/locale/model'
 
 export interface NationApiInterface {
   name: NationName
@@ -15,7 +15,7 @@ export interface NationApiInterface {
   color: number
   tags: Array<string>
   localization: {
-    mark: Record<Locale, string>
+    mark: Dictionary
   }
   id: number
 }

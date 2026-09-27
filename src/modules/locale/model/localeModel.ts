@@ -19,3 +19,5 @@ export const enum Locale {
   PL = 'pl',
   ZH_TW = 'zh_tw',
 }
+
+export type Dictionary = Record<Locale, string>

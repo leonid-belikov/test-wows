@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { Locale } from '../model'
+import { type Dictionary, Locale } from '../model'
 
 interface LocaleStore {
   selectedLocale: Locale
   setLocale: (locale: Locale) => void
-  getTranslation: (dictionary: Record<Locale, string>) => string
+  getTranslation: (dictionary: Dictionary) => string
 }
 
 export const useLocaleStore = create<LocaleStore>()(
@@ -15,7 +15,7 @@ export const useLocaleStore = create<LocaleStore>()(
       setLocale: (value: Locale) => {
         set({ selectedLocale: value })
       },
-      getTranslation: (dictionary: Record<Locale, string>) => dictionary[get().selectedLocale],
+      getTranslation: (dictionary: Dictionary) => dictionary[get().selectedLocale],
     }),
     {
       name: 'localeStore',

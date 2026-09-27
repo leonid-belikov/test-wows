@@ -10,7 +10,7 @@ type Props<T> = {
   items: Array<T>
 }
 
-const VirtualGrid = <T extends Key>({ items }: Props<T>) => {
+const VirtualGrid = <T extends { id: Key }>({ items }: Props<T>) => {
   const [columnsCount, setColumnsCount] = useState(1)
   const [rowHeight, setRowHeight] = useState(200)
 
@@ -109,15 +109,15 @@ const VirtualGrid = <T extends Key>({ items }: Props<T>) => {
                 transform: `translateY(${row.start}px)`,
               }}
             >
-              {items.map((num) => (
+              {items.map((item) => (
                 <div
-                  key={num}
+                  key={item.id}
                   className={cm.card}
                   style={{
                     height: `${row.size - 10}px`,
                   }}
                 >
-                  Card {num} (row {row.index})
+                  Card {item.id} (row {row.index})
                 </div>
               ))}
             </div>

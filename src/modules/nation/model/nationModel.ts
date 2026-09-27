@@ -1,4 +1,4 @@
-import { Locale } from 'modules/locale/model'
+import { type Dictionary } from 'modules/locale/model'
 
 export const enum NationName {
   NETHERLANDS = 'netherlands',
@@ -22,5 +22,5 @@ export interface Nation {
     small: string
     large: string
   }
-  nameDictionary: Record<Locale, string>
+  nameDictionary: Dictionary
 }
