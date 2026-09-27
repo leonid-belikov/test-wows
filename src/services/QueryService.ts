@@ -1,4 +1,5 @@
 import { QueryCache, QueryClient } from '@tanstack/react-query'
+import { ErrorService } from './index.ts'
 
 let queryClient: QueryClient
 
@@ -12,7 +13,10 @@ const QueryService = {
       },
       queryCache: new QueryCache({
         onError(error, query) {
-          console.error('[QueryService] error', error, query.queryKey)
+          ErrorService.log(error, {
+            tag: 'QueryService',
+            context: JSON.stringify(query.queryKey),
+          })
         },
       }),
     })
