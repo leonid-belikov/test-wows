@@ -8,4 +8,14 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  server: {
+    proxy: {
+      '/api-vortex': {
+        target: 'https://vortex.worldofwarships.eu',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api-vortex/, ''),
+      },
+    },
+  },
 })

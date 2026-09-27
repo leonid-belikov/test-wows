@@ -7,7 +7,7 @@ const QueryService = {
     queryClient = new QueryClient({
       defaultOptions: {
         queries: {
-          retry: (failureCount) => failureCount < 2,
+          retry: (failureCount) => failureCount < 3,
         },
       },
       queryCache: new QueryCache({
