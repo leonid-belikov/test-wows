@@ -6,9 +6,13 @@
   --default-solid-background: #050505;
   --default-transition-time: 0.2s;
   --info-background: rgb(13 47 82 /0.8);
+  --dark-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, rgb(0 0 0 / 0.5) 25%);
+  --transparent-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, transparent 25%);
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -31,4 +35,22 @@ body {
   height: 100dvh;
   padding: 0;
   margin: 0;
+}
+
+button {
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
 }

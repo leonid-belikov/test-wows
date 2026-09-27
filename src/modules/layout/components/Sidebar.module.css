@@ -1,8 +1,6 @@
 .sidebar {
-  background-color: rgb(218 164 84 / 0.2);
+  background: var(--transparent-gradient-background);
   width: 100%;
-  will-change: transform;
-  transition: transform var(--default-transition-time);
   overflow: hidden;
   flex-shrink: 0;
   position: absolute;
@@ -10,9 +8,20 @@
   top: 0;
   left: 0;
   bottom: 0;
+  border-right: 1px solid rgb(255 255 255 / 0.1);
+  padding: 24px;
+}
+
+.content {
+  will-change: transform;
+  transition: transform var(--default-transition-time);
 }
 
 .sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar.hidden .content {
   transform: translateX(-100%);
 }
 

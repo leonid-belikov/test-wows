@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { type Dictionary, Locale } from '../model'
+import { type Dictionary, Locale } from 'modules/locale/model'
 
 interface LocaleStore {
   selectedLocale: Locale
