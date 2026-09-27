@@ -1,8 +1,8 @@
 import cm from './ShipList.module.css'
-import { VirtualGrid } from 'ui-kit'
+import { Loader, VirtualGrid } from 'ui-kit'
 import { useShip } from '../hooks/useShip.ts'
-import Loader from 'ui-kit/components/Loader.tsx'
 import cx from 'clsx'
+import { shipActions } from 'modules/ship'
 
 const ITEMS = Array.from({ length: 1049 }).map((_, i) => ({ id: i + 1 }))
 
@@ -16,7 +16,13 @@ const ShipList = () => {
       </div>
     )
 
-  if (isError) return <div className={cx(cm.content, cm.empty)}>Error</div>
+  // TODO Make error UI
+  if (isError)
+    return (
+      <div className={cx(cm.content, cm.empty)}>
+        <button onClick={shipActions.fetchDataManually}>Try again</button>
+      </div>
+    )
 
   return (
     <div className={cm.content}>

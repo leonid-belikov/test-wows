@@ -1,9 +1,11 @@
 import { Logo } from 'ui-kit/icons'
+import cm from './Loader.module.css'
 
 const Loader = () => {
   return (
-    <div>
-      <Logo />
+    <div className={cm.loader}>
+      <div className={cm.spinner} />
+      <Logo className={cm.logo} />
     </div>
   )
 }
