@@ -18,7 +18,7 @@ const NationDropdown = () => {
   return (
     <Dropdown.DropdownMenu modal={false}>
       <Dropdown.DropdownMenuTrigger hasChecked={hasChecked}>Nation</Dropdown.DropdownMenuTrigger>
-      <Dropdown.DropdownMenuContent sideOffset={10}>
+      <Dropdown.DropdownMenuContent sideOffset={12}>
         {nations.map((nation) => (
           <Dropdown.DropdownMenuCheckboxItem
             key={nation}

@@ -3,7 +3,7 @@ import cm from './VirtualGrid.module.css'
 import { useVirtualizer } from '@tanstack/react-virtual'
 
 const MIN_ITEM_WIDTH = 320
-const GAP = 10
+const GAP = 12
 const ASPECT_RATIO = 16 / 9
 
 type Props<T> = {

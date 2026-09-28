@@ -17,7 +17,7 @@ const LevelDropdown = () => {
   return (
     <Dropdown.DropdownMenu modal={false}>
       <Dropdown.DropdownMenuTrigger hasChecked={hasChecked}>Level</Dropdown.DropdownMenuTrigger>
-      <Dropdown.DropdownMenuContent sideOffset={10}>
+      <Dropdown.DropdownMenuContent sideOffset={12}>
         {LEVELS.map((level) => (
           <Dropdown.DropdownMenuCheckboxItem
             key={level}
