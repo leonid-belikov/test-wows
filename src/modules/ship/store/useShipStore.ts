@@ -8,6 +8,7 @@ interface ShipStore {
   hasPrev: boolean
   hasNext: boolean
   closeShipDetails: () => void
+  // pinned: Set<string>
 }
 
 export const useShipStore = create<ShipStore>()(

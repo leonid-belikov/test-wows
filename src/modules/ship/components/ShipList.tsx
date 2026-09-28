@@ -8,11 +8,14 @@ import { useVehicleType } from 'modules/vehicle-type'
 import { useNation } from 'modules/nation'
 import { useShipStore } from '../store/useShipStore.ts'
 import DetailsPanel from './DetailsPanel.tsx'
+import Filters from './Filters.tsx'
+import { useFilterStore } from '../store/useFilterStore.ts'
 
 const ShipList = () => {
   useVehicleType()
   useNation()
   const { data, isPending, isError } = useShip()
+  const filteredData = useFilterStore((state) => state.filteredData)
 
   const openedShip = useShipStore((state) => state.openedShip)
 
@@ -31,12 +34,12 @@ const ShipList = () => {
       </div>
     )
 
+  const items = filteredData ?? data
+
   return (
     <div className={cm.content}>
-      <div className={cm.filters}>
-        <h2>Filters</h2>
-      </div>
-      <VirtualGrid items={data} children={(item) => <ShipCard ship={item} />} />
+      <Filters />
+      <VirtualGrid items={items} children={(item) => <ShipCard ship={item} />} />
       <div
         className={cx(cm.details, {
           [cm.opened]: !!openedShip,

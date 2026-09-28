@@ -15,21 +15,6 @@
   align-items: center;
 }
 
-.filters {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--filter-panel-height);
-  background-color: var(--default-solid-background);
-  /*background-color: rgb(80 80 80 / 0.48);*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  border-bottom: 1px solid rgb(255 255 255 / 0.1);
-}
-
 .details {
   position: absolute;
   inset: 0;

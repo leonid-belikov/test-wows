@@ -1,3 +1,5 @@
 export { default as Logo } from './logo.svg?react'
 export { default as CloseIcon } from './close.svg?react'
 export { default as ArrowIcon } from './arrow.svg?react'
+export { default as FiltersIcon } from './filters.svg?react'
+export { default as SearchIcon } from './search.svg?react'
