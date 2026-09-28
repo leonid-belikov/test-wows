@@ -10,13 +10,21 @@ interface LocaleStore {
 
 export const useLocaleStore = create<LocaleStore>()(
   persist(
-    (set, get) => ({
-      selectedLocale: Locale.EN,
-      setLocale: (value: Locale) => {
-        set({ selectedLocale: value })
-      },
-      getTranslation: (dictionary: Dictionary) => dictionary[get().selectedLocale],
-    }),
+    (set, get) => {
+      const getTranslationFabric = () => (dictionary: Dictionary) =>
+        dictionary[get().selectedLocale]
+
+      return {
+        selectedLocale: Locale.EN,
+        setLocale: (value: Locale) => {
+          set({
+            selectedLocale: value,
+            getTranslation: getTranslationFabric(),
+          })
+        },
+        getTranslation: getTranslationFabric(),
+      }
+    },
     {
       name: 'localeStore',
     },

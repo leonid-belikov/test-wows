@@ -1,7 +1,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .info.empty {
@@ -19,7 +19,7 @@
 .centerLine {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-size: 1.25rem;
 }
 

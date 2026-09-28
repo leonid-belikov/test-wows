@@ -3,8 +3,9 @@ import cx from 'clsx'
 import type { FC } from 'react'
 import { useLayoutStore } from '../store/useLayoutStore'
 import { SelectedShipPreview } from 'modules/user'
-import { ArrowIcon } from 'ui-kit/icons'
+import { ArrowIcon, WorldIcon } from 'ui-kit/icons'
 import { useIsDesktop } from 'modules/mq'
+import { LocaleDropdown } from 'modules/locale'
 
 type Props = {
   className?: string
@@ -29,6 +30,10 @@ const Header: FC<Props> = ({ className }) => {
             })}
           />
         </button>
+        <div className={cm.locale}>
+          <WorldIcon className={cm.worldIcon} />
+          <LocaleDropdown />
+        </div>
       </div>
       <img className={cm.logo} src={logoSrc} alt="logo" />
     </header>

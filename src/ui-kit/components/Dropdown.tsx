@@ -8,14 +8,14 @@ export const DropdownMenu = DropdownMenuPrimitive.Root
 type DropdownMenuTriggerProps = React.ComponentPropsWithoutRef<
   typeof DropdownMenuPrimitive.Trigger
 > & {
-  hasChecked: boolean
+  isHighlighted: boolean
   ref?: React.Ref<HTMLButtonElement>
 }
 
-export const DropdownMenuTrigger = ({ ref, hasChecked, ...props }: DropdownMenuTriggerProps) => (
+export const DropdownMenuTrigger = ({ ref, isHighlighted, ...props }: DropdownMenuTriggerProps) => (
   <DropdownMenuPrimitive.Trigger
     className={cx(cm.trigger, {
-      [cm.hasChecked]: hasChecked,
+      [cm.isHighlighted]: isHighlighted,
     })}
     {...props}
     ref={ref}
@@ -63,5 +63,35 @@ export const DropdownMenuCheckboxItem = ({
       {children}
       <DropdownMenuPrimitive.ItemIndicator />
     </DropdownMenuPrimitive.CheckboxItem>
+  )
+}
+
+export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
+
+type DropdownMenuRadioItemProps = React.ComponentPropsWithoutRef<
+  typeof DropdownMenuPrimitive.RadioItem
+> & {
+  ref?: React.Ref<HTMLDivElement>
+}
+
+export const DropdownMenuRadioItem = ({
+  children,
+  ref,
+  onSelect,
+  ...props
+}: DropdownMenuRadioItemProps) => {
+  return (
+    <DropdownMenuPrimitive.RadioItem
+      className={cm.item}
+      ref={ref}
+      onSelect={(e) => {
+        e.preventDefault()
+        onSelect?.(e)
+      }}
+      {...props}
+    >
+      {children}
+      <DropdownMenuPrimitive.ItemIndicator />
+    </DropdownMenuPrimitive.RadioItem>
   )
 }

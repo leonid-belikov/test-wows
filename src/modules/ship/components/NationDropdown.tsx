@@ -17,7 +17,7 @@ const NationDropdown = () => {
 
   return (
     <Dropdown.DropdownMenu modal={false}>
-      <Dropdown.DropdownMenuTrigger hasChecked={hasChecked}>Nation</Dropdown.DropdownMenuTrigger>
+      <Dropdown.DropdownMenuTrigger isHighlighted={hasChecked}>Nation</Dropdown.DropdownMenuTrigger>
       <Dropdown.DropdownMenuContent sideOffset={12}>
         {nations.map((nation) => (
           <Dropdown.DropdownMenuCheckboxItem

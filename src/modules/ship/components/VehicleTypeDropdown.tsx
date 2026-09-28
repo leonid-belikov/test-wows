@@ -18,7 +18,7 @@ const VehicleTypeDropdown = () => {
 
   return (
     <Dropdown.DropdownMenu modal={false}>
-      <Dropdown.DropdownMenuTrigger hasChecked={hasChecked}>Type</Dropdown.DropdownMenuTrigger>
+      <Dropdown.DropdownMenuTrigger isHighlighted={hasChecked}>Type</Dropdown.DropdownMenuTrigger>
       <Dropdown.DropdownMenuContent sideOffset={12}>
         {vehicleTypes.map((vehicleType) => (
           <Dropdown.DropdownMenuCheckboxItem

@@ -45,6 +45,17 @@
   height: 40px;
 }
 
+.locale {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 48px;
+}
+
+.worldIcon {
+  height: 40px;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .toggle:hover {
     border-color: rgb(255 255 255 / 0.3);
