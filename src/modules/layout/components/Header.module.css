@@ -7,6 +7,13 @@
   display: flex;
   align-items: center;
   padding: 0 24px;
+  justify-content: space-between;
+}
+
+.leftBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .toggle {
@@ -18,7 +25,6 @@
   will-change: background-color;
   transition: background-color 0.2s;
   padding: 8px;
-  margin-left: 12px;
   border: 1px solid rgb(255 255 255 / 0.1);
 }
 
@@ -33,6 +39,10 @@
 
 .arrow.right {
   transform: rotate(90deg);
+}
+
+.logo {
+  height: 40px;
 }
 
 @media (hover: hover) and (pointer: fine) {
