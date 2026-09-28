@@ -81,7 +81,7 @@ const Details: FC<Props> = ({ ship }) => {
           <NationIcon className={cm.flag} value={ship.nation} />
         </div>
         <VehicleTypeLabel value={ship.type} />
-        <ShipLevel level={ship.level} />
+        <ShipLevel value={ship.level} />
       </div>
       <div className={cm.description}>
         <p>{description}</p>

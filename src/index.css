@@ -49,6 +49,7 @@
 :root {
   --text-primary: #fff;
   --text-secondary: rgba(255, 255, 255, .8);
+  --highlight: #00b4b9;
   --main-font-family: RobotoCondensed;
   --main-font-size: 16px;
   --default-background: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/default-pattern.jpg);

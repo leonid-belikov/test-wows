@@ -1,6 +1,6 @@
 import { type Dictionary } from 'modules/locale/model'
 
-export const enum NationName {
+export enum NationName {
   NETHERLANDS = 'netherlands',
   USA = 'usa',
   COMMONWEALTH = 'commonwealth',

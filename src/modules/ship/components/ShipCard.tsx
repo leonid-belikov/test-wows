@@ -45,7 +45,7 @@ const ShipCard: FC<Props> = ({ ship }) => {
       {!isLoaded && <Loader isLogo={false} size="small" className={cm.logo} />}
       <div className={cm.info}>
         <VehicleTypeIcon value={ship.type} />
-        <ShipLevel level={ship.level} />
+        <ShipLevel value={ship.level} />
         <div>{name}</div>
       </div>
     </button>

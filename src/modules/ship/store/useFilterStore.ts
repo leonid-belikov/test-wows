@@ -7,7 +7,7 @@ interface FilterStore {
   filteredData: Array<Ship> | null
   search: string
   vehicleType: Record<VehicleTypeName, boolean>
-  level: Record<number, boolean>
+  level: Record<string, boolean>
   nation: Record<NationName, boolean>
 }
 
@@ -15,8 +15,8 @@ export const useFilterStore = create<FilterStore>(() => ({
   filteredData: null,
   search: '',
   vehicleType: {
-    [VehicleTypeName.AIR_CARRIER]: false,
     [VehicleTypeName.CRUISER]: false,
+    [VehicleTypeName.AIR_CARRIER]: false,
     [VehicleTypeName.BATTLESHIP]: false,
     [VehicleTypeName.DESTROYER]: false,
     [VehicleTypeName.SUBMARINE]: false,

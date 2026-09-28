@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 
 type Props = {
-  level: number
+  value: number
 }
 
 const MAP: Record<string, string> = {
@@ -18,8 +18,8 @@ const MAP: Record<string, string> = {
   11: '★',
 }
 
-const ShipLevel: FC<Props> = ({ level }) => {
-  const displayedLevel = MAP[level.toString()]
+const ShipLevel: FC<Props> = ({ value }) => {
+  const displayedLevel = MAP[value.toString()]
 
   return <div>{displayedLevel}</div>
 }
