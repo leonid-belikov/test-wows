@@ -10,6 +10,7 @@ import { useShipStore } from '../store/useShipStore'
 import DetailsPanel from './DetailsPanel'
 import Filters from './Filters'
 import { useFilterStore } from '../store/useFilterStore'
+import { useUserStore } from 'modules/user'
 
 const ShipList = () => {
   useVehicleType()
@@ -18,6 +19,7 @@ const ShipList = () => {
   const filteredData = useFilterStore((state) => state.filteredData)
 
   const openedShip = useShipStore((state) => state.openedShip)
+  const selectedShip = useUserStore((state) => state.selectedShip)
 
   if (isPending)
     return (
@@ -39,7 +41,10 @@ const ShipList = () => {
   return (
     <div className={cm.content}>
       <Filters />
-      <VirtualGrid items={items} children={(item) => <ShipCard ship={item} />} />
+      <VirtualGrid
+        items={items}
+        children={(item) => <ShipCard ship={item} isSelected={item.id === selectedShip?.id} />}
+      />
       <div
         className={cx(cm.details, {
           [cm.opened]: !!openedShip,

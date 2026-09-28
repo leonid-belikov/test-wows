@@ -1,0 +1,39 @@
+.image {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+}
+
+.image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 0.1s;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image .loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.loader.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image .loader.centeredMini {
+  transform: translate(-50%, -50%) scale(0.4);
+}

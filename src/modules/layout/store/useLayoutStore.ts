@@ -9,7 +9,7 @@ interface MqState {
 export const useLayoutStore = create<MqState>()(
   persist(
     (set, get) => ({
-      isHiddenSidebar: false,
+      isHiddenSidebar: true,
       toggleSidebar: () => {
         set({ isHiddenSidebar: !get().isHiddenSidebar })
       },

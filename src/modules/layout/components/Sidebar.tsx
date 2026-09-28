@@ -2,6 +2,7 @@ import cm from './Sidebar.module.css'
 import cx from 'clsx'
 import { useLayoutStore } from '../store/useLayoutStore'
 import { useIsDesktop } from 'modules/mq'
+import { SelectedShipInfo } from 'modules/user'
 
 const Sidebar = () => {
   const isHiddenSidebar = useLayoutStore((state) => state.isHiddenSidebar)
@@ -16,8 +17,7 @@ const Sidebar = () => {
       })}
     >
       <div className={cm.content}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolores esse expedita id
-        incidunt itaque pariatur quas repellendus tempora voluptatibus!
+        <SelectedShipInfo />
       </div>
     </aside>
   )

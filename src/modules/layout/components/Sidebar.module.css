@@ -1,5 +1,5 @@
 .sidebar {
-  background: var(--transparent-gradient-background);
+  background: var(--default-background);
   width: 100%;
   overflow: hidden;
   flex-shrink: 0;
@@ -15,6 +15,7 @@
 .content {
   will-change: transform;
   transition: transform var(--default-transition-time);
+  height: 100%;
 }
 
 .sidebar.hidden {
@@ -26,5 +27,6 @@
 }
 
 .sidebar.isDesktop {
+  background: var(--transparent-gradient-background);
   width: 350px;
 }

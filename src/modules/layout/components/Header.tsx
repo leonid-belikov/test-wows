@@ -2,6 +2,8 @@ import cm from './Header.module.css'
 import cx from 'clsx'
 import type { FC } from 'react'
 import { useLayoutStore } from '../store/useLayoutStore'
+import { SelectedShipPreview } from 'modules/user'
+import { ArrowIcon } from 'ui-kit/icons'
 
 type Props = {
   className?: string
@@ -13,8 +15,14 @@ const Header: FC<Props> = ({ className }) => {
 
   return (
     <header className={cx(cm.header, className)}>
-      <button type="button" onClick={toggleSidebar}>
-        {isHiddenSidebar ? 'Show' : 'Hide'}
+      <SelectedShipPreview />
+      <button className={cm.toggle} type="button" onClick={toggleSidebar}>
+        <ArrowIcon
+          className={cx(cm.arrow, {
+            [cm.left]: !isHiddenSidebar,
+            [cm.right]: isHiddenSidebar,
+          })}
+        />
       </button>
     </header>
   )

@@ -1,16 +1,17 @@
-import { type FC, useState } from 'react'
+import { type FC } from 'react'
 import cm from './Details.module.css'
 import { type Ship, ShipIconSize } from 'modules/ship/model'
 import { useLocaleStore } from 'modules/locale'
 import { IconService } from 'services'
 import cx from 'clsx'
-import { Loader } from 'ui-kit'
 import { VehicleTypeLabel } from 'modules/vehicle-type'
 import ShipLevel from './ShipLevel'
 import { NationIcon } from 'modules/nation'
 import { ArrowIcon } from 'ui-kit/icons'
 import { useShipStore } from '../store/useShipStore'
 import { shipActions } from 'modules/ship'
+import { ChooseButton } from 'modules/user'
+import { Image } from 'ui-kit'
 
 type Props = {
   ship: Ship
@@ -21,16 +22,10 @@ const Details: FC<Props> = ({ ship }) => {
   const hasPrev = useShipStore((state) => state.hasPrev)
   const hasNext = useShipStore((state) => state.hasNext)
 
-  const [isLoaded, setIsLoaded] = useState(false)
-
   const name = getTranslation(ship.nameDictionary)
   const description = getTranslation(ship.descriptionDictionary)
 
   const src = IconService.getURL(ship.iconPath[ShipIconSize.LARGE])
-
-  const handleLoad = () => {
-    setIsLoaded(true)
-  }
 
   const handleClickLeft = () => {
     shipActions.openPrevShip()
@@ -44,17 +39,7 @@ const Details: FC<Props> = ({ ship }) => {
     <div className={cm.details}>
       <h1>{name}</h1>
       <div className={cm.centralLine}>
-        <div className={cm.ship}>
-          <img
-            className={cx({
-              [cm.hidden]: !isLoaded,
-            })}
-            src={src}
-            onLoad={handleLoad}
-            alt={name}
-          />
-          {!isLoaded && <Loader className={cm.loader} />}
-        </div>
+        <Image className={cm.ship} url={src} alt={name} isCentered />
         <div className={cm.buttons}>
           <button
             className={cx(cm.arrow, {
@@ -74,6 +59,9 @@ const Details: FC<Props> = ({ ship }) => {
           >
             <ArrowIcon className={cm.right} />
           </button>
+          <div className={cx(cm.chooseBtn)}>
+            <ChooseButton ship={ship} />
+          </div>
         </div>
       </div>
       <div className={cm.bottomLine}>
@@ -82,6 +70,9 @@ const Details: FC<Props> = ({ ship }) => {
         </div>
         <VehicleTypeLabel value={ship.type} />
         <ShipLevel value={ship.level} />
+        <div className={cx(cm.chooseBtn)}>
+          <ChooseButton ship={ship} />
+        </div>
       </div>
       <div className={cm.description}>
         <p>{description}</p>

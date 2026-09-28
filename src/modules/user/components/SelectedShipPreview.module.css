@@ -1,0 +1,22 @@
+.preview {
+  height: 48px;
+  width: 96px;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview.empty {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.icon {
+  color: rgb(255 255 255 / 0.3);
+  width: 24px;
+  height: 24px;
+}
+
+.preview img {
+  height: 100%;
+}
