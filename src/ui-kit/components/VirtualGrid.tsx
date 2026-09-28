@@ -115,7 +115,7 @@ const VirtualGrid = <T extends { id: Key }>({ items, children }: Props<T>) => {
                 <div
                   key={item.id}
                   style={{
-                    height: `${row.size - 10}px`,
+                    height: `${row.size - 12}px`,
                   }}
                 >
                   {children(item)}

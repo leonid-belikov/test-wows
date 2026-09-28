@@ -40,6 +40,13 @@
   }
 }
 
+@container details (width < 860px) {
+  h1 {
+    font-size: 1.75rem;
+    margin-top: 32px;
+  }
+}
+
 button.close,
 button.arrow {
   height: 40px;

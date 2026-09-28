@@ -14,13 +14,15 @@ const Filters = () => {
   return (
     <div className={cm.filters}>
       <Search />
-      <FiltersIcon className={cm.filterIcon} />
-      <VehicleTypeDropdown />
-      <LevelDropdown />
-      <NationDropdown />
-      <button className={cm.reset} type="button" onClick={handleResetClick}>
-        reset all
-      </button>
+      <div className={cm.filterBox}>
+        <FiltersIcon className={cm.filterIcon} />
+        <VehicleTypeDropdown />
+        <LevelDropdown />
+        <NationDropdown />
+        <button className={cm.reset} type="button" onClick={handleResetClick}>
+          reset all
+        </button>
+      </div>
     </div>
   )
 }
