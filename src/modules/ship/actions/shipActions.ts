@@ -39,12 +39,12 @@ export const openShipDetails = (ship: Ship) => {
   })
 }
 
-const selectAnotherShip = (delta: number) => {
+const openAnotherShip = (delta: number) => {
   const openedShipIndex = useShipStore.getState().openedShipIndex
 
   const data = QueryService.getClient().getQueryData<Array<Ship>>(['ship'])
   if (!data) {
-    ErrorService.log('data is not defined', { tag: 'selectAnotherShip' })
+    ErrorService.log('data is not defined', { tag: 'openAnotherShip' })
     return
   }
 
@@ -62,12 +62,12 @@ const selectAnotherShip = (delta: number) => {
   })
 }
 
-export const selectNextShip = () => {
-  selectAnotherShip(1)
+export const openNextShip = () => {
+  openAnotherShip(1)
 }
 
-export const selectPrevShip = () => {
-  selectAnotherShip(-1)
+export const openPrevShip = () => {
+  openAnotherShip(-1)
 }
 
 const applyFilters = () => {

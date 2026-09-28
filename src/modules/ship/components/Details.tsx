@@ -33,11 +33,11 @@ const Details: FC<Props> = ({ ship }) => {
   }
 
   const handleClickLeft = () => {
-    shipActions.selectPrevShip()
+    shipActions.openPrevShip()
   }
 
   const handleClickRight = () => {
-    shipActions.selectNextShip()
+    shipActions.openNextShip()
   }
 
   return (
