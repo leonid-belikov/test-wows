@@ -1,6 +1,6 @@
 import { ApiService } from 'services'
-import type { NationApiResponse } from './nationApiInterfaces.ts'
-import { nationResponseAdapter } from './nationApiAdapters.ts'
+import type { NationApiResponse } from './nationApiInterfaces'
+import { nationResponseAdapter } from './nationApiAdapters'
 
 const DATA_URL = 'nations/'
 

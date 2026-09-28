@@ -1,7 +1,7 @@
 import { Dropdown } from 'ui-kit'
-import { useFilterStore } from '../store/useFilterStore.ts'
+import { useFilterStore } from '../store/useFilterStore'
 import { shipActions } from 'modules/ship'
-import ShipLevel from './ShipLevel.tsx'
+import ShipLevel from './ShipLevel'
 
 const LEVELS = Array.from({ length: 11 }).map((_, i) => i + 1)
 

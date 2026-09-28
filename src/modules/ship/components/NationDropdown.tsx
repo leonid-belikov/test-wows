@@ -1,5 +1,5 @@
 import { Dropdown } from 'ui-kit'
-import { useFilterStore } from '../store/useFilterStore.ts'
+import { useFilterStore } from '../store/useFilterStore'
 import { shipActions } from 'modules/ship'
 import { NationName } from 'modules/nation/model'
 import { NationLabel } from 'modules/nation'

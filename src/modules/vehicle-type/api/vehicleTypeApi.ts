@@ -1,6 +1,6 @@
 import { ApiService } from 'services'
-import type { VehicleTypeResponse } from './vehicleTypeApiInterfaces.ts'
-import { vehicleTypeResponseAdapter } from './vehicleTypeApiAdapters.ts'
+import type { VehicleTypeResponse } from './vehicleTypeApiInterfaces'
+import { vehicleTypeResponseAdapter } from './vehicleTypeApiAdapters'
 
 const DATA_URL = 'vehicle_types_common/'
 

@@ -1,4 +1,4 @@
-import type { ShipApiResponse } from './shipApiInterfaces.ts'
+import type { ShipApiResponse } from './shipApiInterfaces'
 import { type Ship, ShipIconSize } from 'modules/ship/model'
 
 export const shipResponseAdapter = (response: ShipApiResponse): Array<Ship> => {

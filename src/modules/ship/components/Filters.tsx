@@ -1,8 +1,8 @@
 import cm from './Filters.module.css'
-import Search from './Search.tsx'
-import VehicleTypeDropdown from './VehicleTypeDropdown.tsx'
-import LevelDropdown from './LevelDropdown.tsx'
-import NationDropdown from './NationDropdown.tsx'
+import Search from './Search'
+import VehicleTypeDropdown from './VehicleTypeDropdown'
+import LevelDropdown from './LevelDropdown'
+import NationDropdown from './NationDropdown'
 import { FiltersIcon } from 'ui-kit/icons'
 import { shipActions } from 'modules/ship'
 

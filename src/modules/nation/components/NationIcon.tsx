@@ -1,4 +1,4 @@
-import { useNation } from '../hooks/useNation.ts'
+import { useNation } from '../hooks/useNation'
 import { NationName } from 'modules/nation/model'
 import type { FC } from 'react'
 import { IconService } from 'services'

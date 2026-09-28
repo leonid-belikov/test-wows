@@ -1,6 +1,6 @@
 import { ApiService } from 'services'
 import type { ShipApiResponse } from './shipApiInterfaces'
-import { shipResponseAdapter } from './shipApiAdapters.ts'
+import { shipResponseAdapter } from './shipApiAdapters'
 
 const DATA_URL = 'vehicles/'
 

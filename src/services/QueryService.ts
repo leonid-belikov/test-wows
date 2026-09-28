@@ -1,5 +1,5 @@
 import { QueryCache, QueryClient } from '@tanstack/react-query'
-import { ErrorService } from './index.ts'
+import { ErrorService } from 'services'
 
 let queryClient: QueryClient
 

@@ -1,9 +1,9 @@
-import { useShipStore } from '../store/useShipStore.ts'
+import { useShipStore } from '../store/useShipStore'
 import { type FC } from 'react'
 import { type Ship } from 'modules/ship/model'
 import cm from './Details.module.css'
 import { CloseIcon } from 'ui-kit/icons'
-import Details from './Details.tsx'
+import Details from './Details'
 
 type Props = {
   ship: Ship | null

@@ -1,15 +1,15 @@
 import cm from './ShipList.module.css'
 import { Loader, VirtualGrid } from 'ui-kit'
-import { useShip } from '../hooks/useShip.ts'
+import { useShip } from '../hooks/useShip'
 import cx from 'clsx'
 import { shipActions } from 'modules/ship'
-import ShipCard from './ShipCard.tsx'
+import ShipCard from './ShipCard'
 import { useVehicleType } from 'modules/vehicle-type'
 import { useNation } from 'modules/nation'
-import { useShipStore } from '../store/useShipStore.ts'
-import DetailsPanel from './DetailsPanel.tsx'
-import Filters from './Filters.tsx'
-import { useFilterStore } from '../store/useFilterStore.ts'
+import { useShipStore } from '../store/useShipStore'
+import DetailsPanel from './DetailsPanel'
+import Filters from './Filters'
+import { useFilterStore } from '../store/useFilterStore'
 
 const ShipList = () => {
   useVehicleType()

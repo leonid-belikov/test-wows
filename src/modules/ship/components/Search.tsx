@@ -1,6 +1,6 @@
 import cm from './Search.module.css'
 import { CloseIcon, SearchIcon } from 'ui-kit/icons'
-import { useFilterStore } from '../store/useFilterStore.ts'
+import { useFilterStore } from '../store/useFilterStore'
 import type { ChangeEvent } from 'react'
 import { shipActions } from 'modules/ship'
 

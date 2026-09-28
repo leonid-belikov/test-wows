@@ -6,11 +6,11 @@ import { IconService } from 'services'
 import cx from 'clsx'
 import { Loader } from 'ui-kit'
 import { VehicleTypeLabel } from 'modules/vehicle-type'
-import ShipLevel from './ShipLevel.tsx'
+import ShipLevel from './ShipLevel'
 import { NationIcon } from 'modules/nation'
 import { ArrowIcon } from 'ui-kit/icons'
-import { useShipStore } from '../store/useShipStore.ts'
-import { shipActions } from '../index.ts'
+import { useShipStore } from '../store/useShipStore'
+import { shipActions } from 'modules/ship'
 
 type Props = {
   ship: Ship

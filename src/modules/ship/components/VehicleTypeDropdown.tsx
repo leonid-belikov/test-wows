@@ -1,6 +1,6 @@
 import { Dropdown } from 'ui-kit'
 import { VehicleTypeName } from 'modules/vehicle-type/model'
-import { useFilterStore } from '../store/useFilterStore.ts'
+import { useFilterStore } from '../store/useFilterStore'
 import { VehicleTypeIcon, VehicleTypeLabel } from 'modules/vehicle-type'
 import { shipActions } from 'modules/ship'
 import cm from './VehicleTypeDropdown.module.css'
