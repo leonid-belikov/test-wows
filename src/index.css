@@ -1,12 +1,61 @@
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/RobotoCondensed-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/RobotoCondensed-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/RobotoCondensed-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
 :root {
   --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, .8);
   --main-font-family: RobotoCondensed;
   --main-font-size: 16px;
   --default-background: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/default-pattern.jpg);
   --default-solid-background: #050505;
   --default-transition-time: 0.2s;
   --info-background: rgb(13 47 82 /0.8);
-  --dark-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, rgb(0 0 0 / 0.5) 25%);
+  --dark-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, rgb(0 0 0 / 0.5) 25%, rgb(13 47 82 /100) 100%);
   --transparent-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, transparent 25%);
 }
 
@@ -14,6 +63,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--main-font-family), sans-serif;
 }
 
 #root {
@@ -29,7 +79,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   color: var(--text-primary);
-  font-family: var(--main-font-family), sans-serif;
   font-size: var(--main-font-size);
   overflow-x: hidden;
   height: 100dvh;
@@ -53,4 +102,8 @@ h1 {
 h2 {
   font-size: 2rem;
   font-weight: bold;
+}
+
+p {
+  color: var(--text-secondary);
 }

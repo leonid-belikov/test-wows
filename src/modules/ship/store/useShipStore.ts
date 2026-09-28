@@ -4,7 +4,9 @@ import type { Ship } from 'modules/ship/model'
 
 interface ShipStore {
   openedShip: Ship | null
-  openShipDetails: (ship: Ship) => void
+  openedShipIndex: number
+  hasPrev: boolean
+  hasNext: boolean
   closeShipDetails: () => void
 }
 
@@ -12,11 +14,14 @@ export const useShipStore = create<ShipStore>()(
   persist(
     (set) => ({
       openedShip: null,
-      openShipDetails: (ship: Ship) => {
-        set({ openedShip: ship })
-      },
+      openedShipIndex: -1,
+      hasPrev: false,
+      hasNext: false,
       closeShipDetails: () => {
-        set({ openedShip: null })
+        set({
+          openedShip: null,
+          openedShipIndex: -1,
+        })
       },
     }),
     {

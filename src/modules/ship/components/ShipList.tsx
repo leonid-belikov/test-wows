@@ -7,7 +7,7 @@ import ShipCard from './ShipCard.tsx'
 import { useVehicleType } from 'modules/vehicle-type'
 import { useNation } from 'modules/nation'
 import { useShipStore } from '../store/useShipStore.ts'
-import Details from './Details.tsx'
+import DetailsPanel from './DetailsPanel.tsx'
 
 const ShipList = () => {
   useVehicleType()
@@ -42,7 +42,7 @@ const ShipList = () => {
           [cm.opened]: !!openedShip,
         })}
       >
-        <Details ship={openedShip} key={openedShip?.id} />
+        <DetailsPanel ship={openedShip} key={openedShip?.id} />
       </div>
     </div>
   )

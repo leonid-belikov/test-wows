@@ -8,7 +8,7 @@ import { useLocaleStore } from 'modules/locale'
 import ShipLevel from './ShipLevel'
 import cx from 'clsx'
 import { Loader } from 'ui-kit'
-import { useShipStore } from '../store/useShipStore'
+import { shipActions } from 'modules/ship'
 
 type Props = {
   ship: Ship
@@ -17,8 +17,6 @@ type Props = {
 const ShipCard: FC<Props> = ({ ship }) => {
   const getTranslation = useLocaleStore((state) => state.getTranslation)
   const name = getTranslation(ship.nameDictionary)
-
-  const openShipDetails = useShipStore((state) => state.openShipDetails)
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -29,7 +27,7 @@ const ShipCard: FC<Props> = ({ ship }) => {
   }
 
   const handleClick = () => {
-    openShipDetails(ship)
+    shipActions.openShipDetails(ship)
   }
 
   return (

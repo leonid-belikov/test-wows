@@ -4,7 +4,7 @@ import type { Nation } from 'modules/nation/model'
 const mapNation = (response: NationApiInterface): Nation => ({
   name: response.name,
   iconPath: {
-    small: response.icons.small,
+    small: response.icons.tiny,
     large: response.icons.large,
   },
   nameDictionary: response.localization.mark,
