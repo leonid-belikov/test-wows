@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  base: '/test-wows/',
   server: {
     proxy: {
       '/api-vortex': {
