@@ -23,11 +23,11 @@ const SelectedShipInfo = () => {
   const name = getTranslation(selectedShip.nameDictionary)
   const description = getTranslation(selectedShip.descriptionDictionary)
 
-  const url = IconService.getURL(selectedShip.iconPath[ShipIconSize.MEDIUM])
+  const src = IconService.getURL(selectedShip.iconPath[ShipIconSize.MEDIUM])
 
   return (
     <div className={cm.info}>
-      <Image className={cm.ship} url={url} alt={name} isCentered />
+      <Image className={cm.ship} src={src} alt={name} isCentered />
       <h2>{name}</h2>
       <div className={cm.centerLine}>
         <div className={cm.flagBox}>

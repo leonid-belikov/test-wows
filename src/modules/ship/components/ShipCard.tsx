@@ -19,7 +19,7 @@ const ShipCard: FC<Props> = ({ ship, isSelected }) => {
   const getTranslation = useLocaleStore((state) => state.getTranslation)
   const name = getTranslation(ship.nameDictionary)
 
-  const shipIconURL = IconService.getURL(ship.iconPath[ShipIconSize.MEDIUM])
+  const src = IconService.getURL(ship.iconPath[ShipIconSize.MEDIUM])
 
   const handleClick = () => {
     shipActions.openShipDetails(ship)
@@ -36,7 +36,7 @@ const ShipCard: FC<Props> = ({ ship, isSelected }) => {
       <NationIcon value={ship.nation} isLarge className={cm.flag} />
       <Image
         className={cm.ship}
-        url={shipIconURL}
+        src={src}
         alt={name}
         loaderProps={{ isLogo: false, size: 'small' }}
       />

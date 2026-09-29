@@ -20,12 +20,12 @@ const SelectedShipPreview = () => {
       </button>
     )
 
-  const url = IconService.getURL(selectedShip.iconPath[ShipIconSize.SMALL])
+  const src = IconService.getURL(selectedShip.iconPath[ShipIconSize.SMALL])
 
   return (
     <button type="button" className={cm.preview} onClick={toggleSidebar}>
       <Image
-        url={url}
+        src={src}
         alt={selectedShip.id}
         loaderProps={{ isLogo: false, size: 'small' }}
         isCentered

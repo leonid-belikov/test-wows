@@ -2,6 +2,7 @@ import { useNation } from '../hooks/useNation'
 import { NationName } from 'modules/nation/model'
 import type { FC } from 'react'
 import { IconService } from 'services'
+import { Image } from 'ui-kit'
 
 type Props = {
   value: NationName
@@ -21,7 +22,7 @@ const NationIcon: FC<Props> = ({ value, isLarge, className }) => {
   const path = isLarge ? nationData.iconPath.large : nationData.iconPath.small
   const src = IconService.getURL(path)
 
-  return <img loading="lazy" className={className} src={src} alt={value} />
+  return <Image src={src} alt={value} className={className} showLoader={false} />
 }
 
 export default NationIcon

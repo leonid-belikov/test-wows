@@ -4,7 +4,7 @@ import cm from './Image.module.css'
 import { Loader } from 'ui-kit'
 
 type Props = {
-  url: string
+  src: string
   alt: string
   loaderProps?: {
     isLogo?: boolean
@@ -12,9 +12,17 @@ type Props = {
   }
   className?: string
   isCentered?: boolean
+  showLoader?: boolean
 }
 
-const Image: FC<Props> = ({ url, alt, loaderProps = {}, className, isCentered }) => {
+const Image: FC<Props> = ({
+  src,
+  alt,
+  loaderProps = {},
+  className,
+  isCentered,
+  showLoader = true,
+}) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoad = () => {
@@ -25,14 +33,14 @@ const Image: FC<Props> = ({ url, alt, loaderProps = {}, className, isCentered })
     <div className={cx(cm.image, className)}>
       <img
         loading="lazy"
-        src={url}
+        src={src}
         className={cx({
           [cm.hidden]: !isLoaded,
         })}
         onLoad={handleLoad}
         alt={alt}
       />
-      {!isLoaded && (
+      {showLoader && !isLoaded && (
         <Loader
           {...loaderProps}
           className={cx(cm.loader, {

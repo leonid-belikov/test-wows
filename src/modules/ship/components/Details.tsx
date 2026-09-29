@@ -39,7 +39,7 @@ const Details: FC<Props> = ({ ship }) => {
     <div className={cm.details}>
       <h1>{name}</h1>
       <div className={cm.centralLine}>
-        <Image className={cm.ship} url={src} alt={name} isCentered />
+        <Image className={cm.ship} src={src} alt={name} isCentered />
         <div className={cm.buttons}>
           <button
             className={cx(cm.arrow, {
