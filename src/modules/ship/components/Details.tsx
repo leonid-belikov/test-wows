@@ -58,9 +58,6 @@ const Details: FC<Props> = ({ ship }) => {
           >
             <ArrowIcon className={cm.right} />
           </button>
-          <div className={cx(cm.chooseBtn)}>
-            <ChooseButton ship={ship} />
-          </div>
         </div>
       </div>
       <div className={cm.bottomLine}>
