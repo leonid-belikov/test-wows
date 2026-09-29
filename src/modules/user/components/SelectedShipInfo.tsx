@@ -1,4 +1,4 @@
-import { useUserStore } from '../store/useUserStore.ts'
+import { useUserStore } from '../store/useUserStore'
 import { IconService } from 'services'
 import { ShipIconSize } from 'modules/ship/model'
 import cm from './SelectedShipInfo.module.css'

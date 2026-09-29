@@ -3,7 +3,7 @@
   height: 64px;
   width: 100%;
   flex-shrink: 0;
-  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  border-bottom: 1px solid var(--default-border);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -27,7 +27,7 @@
   will-change: background-color;
   transition: background-color 0.2s;
   padding: 8px;
-  border: 1px solid rgb(255 255 255 / 0.1);
+  border: 1px solid var(--default-border);
 }
 
 .arrow {
@@ -60,7 +60,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .toggle:hover {
-    border-color: rgb(255 255 255 / 0.3);
+    border-color: var(--hover-border);
   }
 }
 

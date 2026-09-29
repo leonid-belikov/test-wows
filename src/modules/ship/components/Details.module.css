@@ -73,11 +73,10 @@ button.close {
   position: absolute;
   top: 20px;
   right: 20px;
-  color: rgb(255 255 255 /0.5);
 }
 
 button.arrow {
-  background-color: rgb(0 0 0 / 0.4);
+  background-color: var(--dark-control-background);
 }
 
 .left {
@@ -140,7 +139,7 @@ button.arrow {
 .chooseBtn button {
   height: 32px;
   padding: 0 12px;
-  border: 1px solid rgb(255 255 255 / 0.1);
+  border: 1px solid var(--default-border);
   backdrop-filter: blur(5px);
 }
 
@@ -160,14 +159,14 @@ button.arrow {
 
 @media (hover: hover) and (pointer: fine) {
   button.close:hover {
-    background-color: rgb(255 255 255 / 0.1);
+    background-color: var(--hover-ghost-control-background);
   }
 
   button.arrow:hover {
-    background-color: rgb(0 0 0 / 0.8);
+    background-color: var(--hover-dark-control-background);
   }
 
   .chooseBtn button:not(:disabled):hover {
-    border-color: rgb(255 255 255 / 0.3);
+    border-color: var(--hover-border);
   }
 }

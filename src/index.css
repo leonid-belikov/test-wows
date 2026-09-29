@@ -48,7 +48,7 @@
 
 :root {
   --text-primary: #fff;
-  --text-secondary: rgba(255, 255, 255, .8);
+  --text-secondary: rgb(255 255 255 / 0.8);
   --highlight: #00b4b9;
   --highlight-50: rgb(0 180 185 / 0.5);
   --main-font-family: RobotoCondensed;
@@ -59,6 +59,16 @@
   --info-background: rgb(13 47 82 /0.8);
   --dark-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, rgb(0 0 0 / 0.5) 25%, rgb(13 47 82 /100) 100%);
   --transparent-gradient-background: linear-gradient(180deg, var(--default-solid-background) 0%, transparent 25%);
+  --default-border: rgb(255 255 255 / 0.1);
+  --hover-border: rgb(255 255 255 / 0.3);
+  --dark-control-background: rgb(0 0 0 / 0.4);
+  --hover-dark-control-background: rgb(0 0 0 / 0.8);
+  --muted-icon: rgb(255 255 255 / 0.1);
+  --muted-background: rgb(255 255 255 / 0.1);
+  --hover-ghost-control-background: rgb(255 255 255 / 0.1);
+  --ghost-background: rgb(255 255 255 / 0.03);
+  --focused-control-border: rgb(255 255 255 /0.3);
+  --popup-background: rgb(0 0 0 / 0.6);
 }
 
 * {

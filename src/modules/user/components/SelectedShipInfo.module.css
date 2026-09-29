@@ -16,7 +16,7 @@
 .banIcon {
   width: 48px;
   height: 48px;
-  color: rgb(255 255 255 / 0.1);
+  color: var(--muted-icon);
 }
 
 .centerLine {

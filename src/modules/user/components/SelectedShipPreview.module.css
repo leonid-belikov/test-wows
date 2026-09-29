@@ -8,7 +8,7 @@
 }
 
 .preview.empty {
-  background-color: rgb(255 255 255 / 0.1);
+  background-color: var(--muted-background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +18,6 @@
 .preview.empty img {
   width: 100%;
   height: auto;
-}
-
-.icon {
-  color: rgb(255 255 255 / 0.3);
-  width: 24px;
-  height: 24px;
 }
 
 .preview img {
