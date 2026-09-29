@@ -1,0 +1,14 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.logo {
+  flex-shrink: 0;
+  height: 64px;
+}

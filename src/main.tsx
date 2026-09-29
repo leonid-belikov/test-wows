@@ -4,6 +4,8 @@ import './index.css'
 import { App } from './App'
 import { QueryService } from 'services'
 import { QueryClientProvider } from '@tanstack/react-query'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from 'modules/error-fallback/components/ErrorFallback.tsx'
 
 QueryService.init()
 
@@ -13,7 +15,9 @@ const root = createRoot(container)
 root.render(
   <StrictMode>
     <QueryClientProvider client={QueryService.getClient()}>
-      <App />
+      <ErrorBoundary fallback={<ErrorFallback />}>
+        <App />
+      </ErrorBoundary>
     </QueryClientProvider>
   </StrictMode>,
 )
