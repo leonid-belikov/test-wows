@@ -29,6 +29,7 @@
   width: 100%;
   margin-bottom: 12px;
   justify-content: space-between;
+  padding: 0 4px;
 }
 
 @container details (min-width: 860px) {
@@ -117,6 +118,7 @@ button.arrow {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 12px;
+  padding: 0 4px;
 }
 
 .flagBox {
@@ -132,6 +134,7 @@ button.arrow {
   flex-grow: 1;
   overflow: auto;
   width: 100%;
+  padding: 0 4px;
 }
 
 .chooseBtn button {

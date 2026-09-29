@@ -9,6 +9,15 @@
 
 .preview.empty {
   background-color: rgb(255 255 255 / 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.preview.empty img {
+  width: 100%;
+  height: auto;
 }
 
 .icon {

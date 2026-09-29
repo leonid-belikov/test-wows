@@ -8,6 +8,8 @@
   align-items: center;
   padding: 0 24px;
   justify-content: space-between;
+  container-type: inline-size;
+  container-name: header;
 }
 
 .leftBox {
@@ -42,7 +44,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 32px;
 }
 
 .locale {
@@ -53,11 +55,21 @@
 }
 
 .worldIcon {
-  height: 40px;
+  height: 32px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .toggle:hover {
     border-color: rgb(255 255 255 / 0.3);
+  }
+}
+
+@container header (width < 500px) {
+  .locale {
+    margin-left: 24px;
+  }
+
+  .worldIcon {
+    display: none;
   }
 }

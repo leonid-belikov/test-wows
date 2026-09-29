@@ -9,9 +9,10 @@ const ASPECT_RATIO = 16 / 9
 type Props<T> = {
   items: Array<T>
   children: (item: T) => ReactNode
+  emptyText: string
 }
 
-const VirtualGrid = <T extends { id: Key }>({ items, children }: Props<T>) => {
+const VirtualGrid = <T extends { id: Key }>({ items, children, emptyText }: Props<T>) => {
   const [columnsCount, setColumnsCount] = useState(1)
   const [rowHeight, setRowHeight] = useState(200)
 
@@ -125,6 +126,7 @@ const VirtualGrid = <T extends { id: Key }>({ items, children }: Props<T>) => {
           )
         })}
       </div>
+      {!rows.length && <div className={cm.empty}>{emptyText}</div>}
     </div>
   )
 }

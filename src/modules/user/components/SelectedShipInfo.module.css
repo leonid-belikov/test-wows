@@ -1,4 +1,5 @@
 .info {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -8,6 +9,8 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  text-align: center;
+  color: var(--text-secondary);
 }
 
 .banIcon {
@@ -23,9 +26,10 @@
   font-size: 1.25rem;
 }
 
-.ship {
+.info .ship {
   aspect-ratio: 16/9;
   width: 100%;
+  height: auto;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -37,4 +41,9 @@
 
 .flag {
   width: 100%;
+}
+
+.description {
+  flex-grow: 1;
+  overflow: auto;
 }

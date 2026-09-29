@@ -1,4 +1,3 @@
-import { BanIcon } from 'ui-kit/icons'
 import { useUserStore } from '../store/useUserStore.ts'
 import { IconService } from 'services'
 import { ShipIconSize } from 'modules/ship/model'
@@ -17,7 +16,7 @@ const SelectedShipInfo = () => {
   if (!selectedShip)
     return (
       <div className={cx(cm.info, cm.empty)}>
-        <BanIcon className={cm.banIcon} />
+        Information about the ship you chose will appear here
       </div>
     )
 

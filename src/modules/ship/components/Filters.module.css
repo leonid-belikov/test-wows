@@ -4,7 +4,7 @@
   align-items: center;
   font-size: 2rem;
   padding: 12px;
-  gap: 10px;
+  gap: 12px 28px;
   container-type: inline-size;
   container-name: filters;
   flex-wrap: wrap;

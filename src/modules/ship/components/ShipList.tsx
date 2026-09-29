@@ -28,11 +28,13 @@ const ShipList = () => {
       </div>
     )
 
-  // TODO Make error UI
   if (isError)
     return (
       <div className={cx(cm.content, cm.empty)}>
-        <button onClick={shipActions.fetchDataManually}>Try again</button>
+        Something went wrong
+        <button type="button" className={cm.refresh} onClick={shipActions.fetchDataManually}>
+          Try again
+        </button>
       </div>
     )
 
@@ -44,6 +46,7 @@ const ShipList = () => {
       <VirtualGrid
         items={items}
         children={(item) => <ShipCard ship={item} isSelected={item.id === selectedShip?.id} />}
+        emptyText="No ships found"
       />
       <div
         className={cx(cm.details, {
