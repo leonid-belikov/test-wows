@@ -36,7 +36,3 @@ button.reset {
     color: var(--text-primary);
   }
 }
-
-@container filters (width < 566px) {
-  flex-direction: column;
-}
