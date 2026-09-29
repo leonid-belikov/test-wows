@@ -5,9 +5,10 @@ import type { FC } from 'react'
 
 type Props = {
   value: NationName
+  className?: string
 }
 
-const NationLabel: FC<Props> = ({ value }) => {
+const NationLabel: FC<Props> = ({ value, className }) => {
   const getTranslation = useLocaleStore((state) => state.getTranslation)
   const { data, isPending, isError } = useNation()
 
@@ -19,7 +20,7 @@ const NationLabel: FC<Props> = ({ value }) => {
 
   const name = getTranslation(nationData.nameDictionary)
 
-  return <div>{name}</div>
+  return <div className={className}>{name}</div>
 }
 
 export default NationLabel

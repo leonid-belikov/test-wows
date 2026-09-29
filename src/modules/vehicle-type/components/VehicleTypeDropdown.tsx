@@ -1,9 +1,9 @@
 import { Dropdown } from 'ui-kit'
 import { VehicleTypeName } from 'modules/vehicle-type/model'
-import { useFilterStore } from '../store/useFilterStore'
-import { VehicleTypeIcon, VehicleTypeLabel } from 'modules/vehicle-type'
-import { shipActions } from 'modules/ship'
+import { shipActions, useFilterStore } from 'modules/ship'
 import cm from './VehicleTypeDropdown.module.css'
+import VehicleTypeIcon from './VehicleTypeIcon'
+import VehicleTypeLabel from './VehicleTypeLabel'
 
 const VehicleTypeDropdown = () => {
   const vehicleTypes = Object.values(VehicleTypeName)
@@ -30,7 +30,7 @@ const VehicleTypeDropdown = () => {
           >
             <div className={cm.item}>
               <VehicleTypeIcon value={vehicleType} />
-              <VehicleTypeLabel value={vehicleType} />
+              <VehicleTypeLabel className={cm.label} value={vehicleType} />
             </div>
           </Dropdown.DropdownMenuCheckboxItem>
         ))}

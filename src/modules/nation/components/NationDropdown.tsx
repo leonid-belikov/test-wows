@@ -1,8 +1,9 @@
 import { Dropdown } from 'ui-kit'
-import { useFilterStore } from '../store/useFilterStore'
-import { shipActions } from 'modules/ship'
+import { shipActions, useFilterStore } from 'modules/ship'
 import { NationName } from 'modules/nation/model'
 import { NationLabel } from 'modules/nation'
+import NationIcon from './NationIcon.tsx'
+import cm from './NationDropdown.module.css'
 
 const NationDropdown = () => {
   const nations = Object.values(NationName)
@@ -27,7 +28,10 @@ const NationDropdown = () => {
               handleCheckedChange(nation, value)
             }}
           >
-            <NationLabel value={nation} />
+            <div className={cm.item}>
+              <NationIcon className={cm.icon} value={nation} />
+              <NationLabel className={cm.label} value={nation} />
+            </div>
           </Dropdown.DropdownMenuCheckboxItem>
         ))}
       </Dropdown.DropdownMenuContent>
