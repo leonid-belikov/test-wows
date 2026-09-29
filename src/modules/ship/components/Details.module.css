@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 24px 0;
+  padding-top: 24px;
 }
 
 .scrollArea {
@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  padding: 0 24px;
 }
 
 .details {
@@ -142,7 +142,6 @@ button.arrow {
 
 .description {
   flex-grow: 1;
-  overflow: auto;
   width: 100%;
   padding: 0 4px;
 }

@@ -9,13 +9,14 @@
   left: 0;
   bottom: 0;
   border-right: 1px solid var(--default-border);
-  padding: 24px;
 }
 
 .content {
   will-change: transform;
   transition: transform var(--default-transition-time);
   height: 100%;
+  padding: 24px;
+  overflow: auto;
 }
 
 .sidebar.hidden {
