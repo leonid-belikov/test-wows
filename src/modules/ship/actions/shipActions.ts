@@ -6,11 +6,23 @@ import { useFilterStore } from '../store/useFilterStore'
 import { useLocaleStore } from 'modules/locale'
 import { VehicleTypeName } from 'modules/vehicle-type/model'
 import { NationName } from 'modules/nation/model'
+import { vehicleTypeApi } from 'modules/vehicle-type/api'
+import { nationApi } from 'modules/nation/api'
 
 export const fetchDataManually = () => {
   QueryService.getClient().query({
     queryKey: ['ship'],
     queryFn: shipApi.fetchData,
+    staleTime: 'static',
+  })
+  QueryService.getClient().query({
+    queryKey: ['vehicleType'],
+    queryFn: vehicleTypeApi.fetchData,
+    staleTime: 'static',
+  })
+  QueryService.getClient().query({
+    queryKey: ['nation'],
+    queryFn: nationApi.fetchData,
     staleTime: 'static',
   })
 }

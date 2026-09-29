@@ -13,9 +13,12 @@ import { useFilterStore } from '../store/useFilterStore'
 import { useUserStore } from 'modules/user'
 
 const ShipList = () => {
-  useVehicleType()
-  useNation()
-  const { data, isPending, isError } = useShip()
+  const { isPending: isVehicleTypePending, isError: isVehicleTypeError } = useVehicleType()
+  const { isPending: isNationPending, isError: isNationError } = useNation()
+  const { data, isPending: isShipPending, isError: isShipError } = useShip()
+  const isError = isVehicleTypeError || isNationError || isShipError
+  const isPending = isVehicleTypePending || isNationPending || isShipPending
+
   const filteredData = useFilterStore((state) => state.filteredData)
 
   const openedShip = useShipStore((state) => state.openedShip)
