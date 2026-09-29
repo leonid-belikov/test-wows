@@ -37,7 +37,6 @@ const Details: FC<Props> = ({ ship }) => {
 
   return (
     <div className={cm.details}>
-      <h1>{name}</h1>
       <div className={cm.centralLine}>
         <Image className={cm.ship} src={src} alt={name} isCentered />
         <div className={cm.buttons}>
