@@ -16,7 +16,8 @@ const Header: FC<Props> = ({ className }) => {
   const isHiddenSidebar = useLayoutStore((state) => state.isHiddenSidebar)
   const toggleSidebar = useLayoutStore((state) => state.toggleSidebar)
 
-  const logoSrc = isDesktop ? '/static/logo-long.webp' : '/static/logo.webp'
+  const logoPath = isDesktop ? 'static/logo-long.webp' : 'static/logo.webp'
+  const logoSrc = `${import.meta.env.BASE_URL}${logoPath}`
 
   return (
     <header className={cx(cm.header, className)}>
