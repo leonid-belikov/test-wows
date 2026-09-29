@@ -22,30 +22,6 @@
   font-display: swap
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Regular.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: Roboto;
-  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Medium.ttf) format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: Roboto;
-  src: url(https://wows-web-static.wgcdn.co/wowsp/28096fef/redesign/Roboto-Bold.ttf) format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap
-}
-
 :root {
   --text-primary: #fff;
   --text-secondary: rgb(255 255 255 / 0.8);
